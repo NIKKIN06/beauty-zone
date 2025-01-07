@@ -1,0 +1,158 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/play/play-v19-cyrillic_latin-regular.woff2') format('woff2'),
+        url('../fonts/play/play-v19-cyrillic_latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Play';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/play/play-v19-cyrillic_latin-700.woff2') format('woff2'),
+        url('../fonts/play/play-v19-cyrillic_latin-700.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto/roboto-v32-cyrillic_latin-regular.woff2') format('woff2'),
+        url('../fonts/roboto/roboto-v32-cyrillic_latin-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/roboto/roboto-v32-cyrillic_latin-700.woff2') format('woff2'),
+        url('../fonts/roboto/roboto-v32-cyrillic_latin-700.ttf') format('truetype');
+}
+
+:root {
+    --color-primary-white: #ffffff;
+    --color-primary-light: #2b7fff;
+    --color-primary-dark: #011c44;
+
+    --color-secondary-dark: #4a4a4a;
+    --color-secondary-light: #747272;
+}
+
+/* Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--color-primary-dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    font-size: 140px;
+    line-height: 0.8;
+    text-transform: capitalize;
+    color: var(--color-primary-light);
+    margin: 0;
+    max-width: 529px;
+    padding-bottom: 40px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1288px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 48px 0;
+}
+
+/* Header section */
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-grow: 1;
+}
+
+.header-list {
+    display: flex;
+    gap: 56px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.header-icon {
+    fill: var(--color-primary-dark);
+}
+
+.header-social {
+    display: flex;
+    gap: 32px;
+}
+
+/* Hero section */
+.hero-section {
+    margin-left: 51px;
+    background-image: linear-gradient(94deg,#fff 20%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.19) 55%, rgba(255, 255, 255, 0) 68%), url(../images/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right top;
+}
+
+.hero-preface {
+    font-size: 18px;
+    margin: 0;
+    padding: 123px 0 16px;
+}
+
+.hero-button {
+    color: var(--color-primary-white);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border: 2px solid var(--color-primary-light);
+    border-radius: 32px;
+    background-color: var(--color-primary-light);
+    margin-bottom: 14px;
+}
+
+.hero-button:hover {
+    color: var(--color-primary-dark);
+    background-color: transparent;
+}
+
+.hero-description {
+    color: var(--color-secondary-dark);
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 230px;
+    text-align: center;
+    margin: 0;
+}
