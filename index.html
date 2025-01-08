@@ -8,44 +8,50 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="header-container">
-          <nav class="header-nav">
-            <a href="./">
-              <img src="./images/beauty-zone-logo.svg" alt="Beauty Zone logo" />
-            </a>
-            <ul class="header-list">
-              <li><a href="#about-section">Про нас</a></li>
-              <li><a href="#advantages-section">Чому ми</a></li>
-              <li><a href="#procedures-section">Наші процедури</a></li>
-              <li><a href="#contacts-section">Контакти</a></li>
-            </ul>
-          </nav>
-          <div class="header-social">
-            <a href="./">
-              <svg class="header-icon" width="32" height="32">
-                <use href="./icons/icons.svg#icon-phone"></use>
-              </svg>
-            </a>
-            <a href="./">
-              <svg class="header-icon" width="32" height="32">
-                <use href="./icons/icons.svg#icon-facebook"></use>
-              </svg>
-            </a>
-            <a href="./">
-              <svg class="header-icon" width="32" height="32">
-                <use href="./icons/icons.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </div>
+      <div class="header-container">
+        <nav class="header-nav">
+          <a href="./">
+            <img src="./images/beauty-zone-logo.svg" alt="Beauty Zone logo" />
+          </a>
+          <ul class="header-list">
+            <li><a class="header-link" href="#about-section">Про нас</a></li>
+            <li>
+              <a class="header-link" href="#advantages-section">Чому ми</a>
+            </li>
+            <li>
+              <a class="header-link" href="#procedures-section">
+                Наші процедури
+              </a>
+            </li>
+            <li>
+              <a class="header-link" href="#contacts-section">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-social">
+          <a href="./">
+            <svg class="header-icon" width="32" height="32">
+              <use href="./icons/icons.svg#icon-phone"></use>
+            </svg>
+          </a>
+          <a href="./">
+            <svg class="header-icon" width="32" height="32">
+              <use href="./icons/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+          <a href="./">
+            <svg class="header-icon" width="32" height="32">
+              <use href="./icons/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
         </div>
       </div>
     </header>
     <main>
       <section class="hero-section" id="hero-section">
-        <div class="container">
+        <div class="hero-container">
           <p class="hero-preface">Косметологічна клініка</p>
-          <h1>beauty zone</h1>
+          <h1 class="capitalize">beauty zone</h1>
           <button class="hero-button">Замовити дзвінок</button>
           <p class="hero-description">
             Запишись та отримай безкоштовну консультацію нашого косметолога
@@ -53,15 +59,134 @@
         </div>
       </section>
       <section id="about-section">
-        <div class="container"></div>
+        <div class="about-container">
+          <div class="about-content">
+            <h2 class="about-title">
+              Перевтілюйтесь в
+              <span class="accent capitalize">beauty zone!</span>
+            </h2>
+            <p>
+              Наша косметологічна клініка пропонує вам професійні послуги з
+              догляду за шкірою обличчя та тіла.
+            </p>
+            <p>
+              B <span class="accent capitalize">beauty zone</span> ми гарантуємо
+              найвищі стандарти якості та приємний сервіс. Наші косметологічні
+              процедури та препарати допоможуть вам підтримувати свою красу та
+              молодість.
+              <br />
+              З нами краса назавжди!
+            </p>
+          </div>
+          <div>
+            <img
+              class="about-image"
+              src="./images/skin-problem-1.jpg"
+              alt="First photo of skin problem"
+            />
+            <img
+              class="about-image"
+              src="./images/skin-problem-2.jpg"
+              alt="Second photo of skin proble"
+            />
+          </div>
+        </div>
       </section>
-      <section id="advantages-section section">
-        <div class="container"></div>
+      <section class="advantages-section" id="advantages-section">
+        <div class="advantages-container">
+          <h2 class="advantages-title">
+            Чому люди <span class="accent">обирають нас</span>
+          </h2>
+          <ul class="advantages-list">
+            <li class="advantages-item">
+              <svg class="advantages-icon" width="48" height="48">
+                <use href="./icons/icons.svg#icon-item-1"></use>
+              </svg>
+              <p class="advantages-text">
+                Всі наші косметологи мають вищу медичну освіту та стаж роботи
+                від 5 років
+              </p>
+            </li>
+            <li class="advantages-item">
+              <svg class="advantages-icon" width="48" height="48">
+                <use href="./icons/icons.svg#icon-item-2"></use>
+              </svg>
+              <p class="advantages-text">
+                Використовуємо тільки професійне обладнання та косметику,
+                перевірену часом
+              </p>
+            </li>
+            <li class="advantages-item">
+              <svg class="advantages-icon" width="48" height="48">
+                <use href="./icons/icons.svg#icon-item-3"></use>
+              </svg>
+              <p class="advantages-text">
+                Наша мета - підкреслити переваги та приховати недоліки, а не
+                переробити
+              </p>
+            </li>
+          </ul>
+
+          <!-- <div class="advantages-item">
+            <svg class="item-icon" width="48" height="48">
+              <use href="./icons/icons.svg#icon-item-1"></use>
+            </svg>
+            <p>
+              Всі наші косметологи мають вищу медичну освіту та стаж роботи від
+              5 років
+            </p>
+          </div>
+          <div class="advantages-item">
+            <svg class="item-icon" width="48" height="48">
+              <use href="./icons/icons.svg#icon-item-2"></use>
+            </svg>
+            <p>
+              Використовуємо тільки професійне обладнання та косметику,
+              перевірену часом
+            </p>
+          </div>
+          <div class="advantages-item">
+            <svg class="item-icon" width="48" height="48">
+              <use href="./icons/icons.svg#icon-item-3"></use>
+            </svg>
+            <p>
+              Наша мета - підкреслити переваги та приховати недоліки, а не
+              переробити
+            </p>
+          </div> -->
+        </div>
       </section>
-      <section id="procedures-section section">
-        <div class="container"></div>
+      <section id="procedures-section">
+        <div class="container">
+          <h2 class="procedures-title">
+            Наші <span class="accent">процедури</span>
+          </h2>
+          <div class="procedures-cards">
+            <button class="procedures-button" type="button">
+              <svg class="advantages-icon" width="48" height="48">
+                <use href="./icons/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+            <ul class="procedures-list">
+              <li class="procedures-item">
+                <h3>Маски для обличчя</h3>
+              </li>
+              <li class="procedures-item">
+                <h3 class="item-text">Ін'єкції для обличчя</h3>
+              </li>
+              <li class="procedures-item">
+                <h3>Очищення обличчя</h3>
+              </li>
+            </ul>
+            <button class="procedures-button" type="button">
+              <svg class="advantages-icon" width="48" height="48">
+                <use href="./icons/icons.svg#icon-arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
       </section>
-      <section id="contacts-section section">
+      <section id="contacts-section">
         <div class="container"></div>
       </section>
     </main>

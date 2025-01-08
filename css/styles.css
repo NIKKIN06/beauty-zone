@@ -52,10 +52,16 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 22px;
     font-weight: 400;
+    line-height: 1.7;
     color: var(--color-primary-dark);
 }
 
 a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--color-primary-dark);
+    line-height: 1.17;
     text-decoration: none;
 }
 
@@ -68,22 +74,35 @@ h1 {
     font-weight: 700;
     font-size: 140px;
     line-height: 0.8;
-    text-transform: capitalize;
     color: var(--color-primary-light);
     margin: 0;
     max-width: 529px;
     padding-bottom: 40px;
 }
 
+h2 {
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.16;
+    color: var(--color-primary-dark);
+    margin: 0;
+    padding-bottom: 48px;
+}
+
 .container {
     width: 100%;
     max-width: 1288px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 48px 24px;
 }
 
-.section {
-    padding: 48px 0;
+.capitalize {
+    text-transform: capitalize;
+}
+
+h2 .accent {
+    color: var(--color-primary-light);
 }
 
 /* Header section */
@@ -91,7 +110,14 @@ h1 {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 40px;
+
+    width: 100%;
+    max-width: 1288px;
+    padding: 32px 24px;
+    margin: 0 auto;
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .header-nav {
@@ -108,6 +134,10 @@ h1 {
     justify-content: center;
 }
 
+.header-link:hover {
+    color: var(--color-primary-light);
+}
+
 .header-icon {
     fill: var(--color-primary-dark);
 }
@@ -119,17 +149,23 @@ h1 {
 
 /* Hero section */
 .hero-section {
-    margin-left: 51px;
     background-image: linear-gradient(94deg,#fff 20%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.19) 55%, rgba(255, 255, 255, 0) 68%), url(../images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: right top;
 }
 
+.hero-container {
+    width: 100%;
+    max-width: 1288px;
+    margin: 0 auto;
+    padding: 0 24px 126px 75px;
+}
+
 .hero-preface {
     font-size: 18px;
     margin: 0;
-    padding: 123px 0 16px;
+    padding: 16px 0;
 }
 
 .hero-button {
@@ -155,4 +191,119 @@ h1 {
     max-width: 230px;
     text-align: center;
     margin: 0;
+}
+
+/* About section */
+.about-container {
+    display: flex;
+    gap: 32px;
+
+    width: 100%;
+    max-width: 1288px;
+    margin: 0 auto;
+    padding: 0 24px 128px;
+}
+
+.about-title {
+    padding: 41px 0 40px;
+    width: 100%;
+    max-width: 529px;
+}
+
+.about-content {
+    margin: 0;
+    padding-bottom: 40px;
+    width: 100%;
+    max-width: 670px;
+}
+
+.about-content:last-child {
+    margin: 0;
+    padding: 0;
+}
+
+p .accent {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.about-image {
+    max-width: 327px;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px 0 rgba(168, 198, 245, 0.2);
+}
+
+/* Advantages section */
+.advantages-section {
+    /* background-image: linear-gradient(178deg, #2b7fff 33.47%, rgba(43, 127, 255, 0) 63.46%, rgba(43, 127, 255, 0) 89.47%); */
+}
+
+.advantages-container {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+.advantages-title {
+    text-align: center;
+    max-width: 432px;
+    margin: 0 auto;
+}
+
+.advantages-list {
+    display: flex;
+    gap: 56px;
+    padding: 0;
+}
+
+.advantages-item {
+    background-color: var(--color-primary-white);
+    box-shadow: 0 4px 4px 0 rgba(168, 198, 245, 0.38);
+    border-radius: 32px;
+    padding: 24px 32px;
+    margin: 0;
+}
+
+.advantages-icon {
+    fill: var(--color-primary-light);
+    display: block;
+    margin: 0 auto;
+}
+
+.advantages-text {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+/* Procedures section */
+.procedures-container {
+    width: 100%;
+    max-width: 1216px;
+    margin: 0 auto;
+    padding: 48px 0;
+}
+
+.procedures-title {
+    text-align: center;
+}
+
+.procedures-cards {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.procedures-list {
+    display: flex;
+    padding: 0;
+    gap: 16px;
+    
+}
+
+.procedures-item {
+    background-color: var(--color-primary-light);
+    height: 456px;
+    border-radius: 4px 120px;
 }
