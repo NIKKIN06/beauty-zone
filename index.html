@@ -48,11 +48,13 @@
       </div>
     </header>
     <main>
-      <section class="hero-section" id="hero-section">
+      <section id="hero-section">
         <div class="hero-container">
           <p class="hero-preface">Косметологічна клініка</p>
           <h1 class="capitalize">beauty zone</h1>
-          <button class="hero-button">Замовити дзвінок</button>
+          <button class="hero-button modal-btn-open" type="button">
+            Замовити дзвінок
+          </button>
           <p class="hero-description">
             Запишись та отримай безкоштовну консультацію нашого косметолога
           </p>
@@ -78,11 +80,26 @@
               З нами краса назавжди!
             </p>
           </div>
-          <div>
+          <div class="about-pictures">
             <img
               class="about-image"
               src="./images/skin-problem-1.jpg"
               alt="First photo of skin problem"
+            />
+            <img
+              class="about-icons about-star-1"
+              src="./icons/star-1.svg"
+              alt="Decor star 1"
+            />
+            <img
+              class="about-icons about-star-2"
+              src="./icons/star-2.svg"
+              alt="Decor star 2"
+            />
+            <img
+              class="about-icons about-star-3"
+              src="./icons/star-3.svg"
+              alt="Decor star 3"
             />
             <img
               class="about-image"
@@ -135,7 +152,7 @@
           </h2>
           <div class="procedures-cards">
             <button class="procedures-button" type="button">
-              <svg class="procedures-icon" width="48" height="48">
+              <svg class="procedures-icon" width="44" height="44">
                 <use href="./icons/icons.svg#icon-arrow"></use>
               </svg>
             </button>
@@ -150,8 +167,8 @@
                 <h3>Очищення обличчя</h3>
               </li>
             </ul>
-            <button class="procedures-button" type="button">
-              <svg class="procedures-icon" width="48" height="48">
+            <button class="procedures-button next" type="button">
+              <svg class="procedures-icon" width="44" height="44">
                 <use href="./icons/icons.svg#icon-arrow"></use>
               </svg>
             </button>
@@ -175,10 +192,63 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <div class="contacts-form">
-              <h3 class="form-title">
+              <h3 class="contacts-form-title">
                 Запишіться <span class="accent">безкоштовно</span> та отримайте
                 подарунок
               </h3>
+              <form name="modal-form" autocomplete="off">
+                <div class="form-field contacts-form-field">
+                  <label
+                    class="form-label visually-hidden"
+                    for="user-name"
+                  ></label>
+                  <input
+                    class="contacts-form-input"
+                    type="text"
+                    name="user-name"
+                    id="user-name"
+                    placeholder="Ваше ім'я та прізвище"
+                    pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+                    required
+                  />
+
+                  <label
+                    class="form-label visually-hidden"
+                    for="user-tel"
+                  ></label>
+                  <input
+                    class="contacts-form-input"
+                    type="tel"
+                    name="user-tel"
+                    id="user-tel"
+                    placeholder="Ваш номер телефону"
+                    pattern="^\+380[0-9]{9}$"
+                    required
+                  />
+
+                  <label
+                    class="form-label visually-hidden"
+                    for="user-email"
+                  ></label>
+                  <input
+                    class="contacts-form-input"
+                    type="email"
+                    name="user-email"
+                    id="user-email"
+                    placeholder="Ваша електронна пошта"
+                    required
+                  />
+                </div>
+                <button class="contacts-form-button hero-button" type="submit">
+                  Записатись безкоштовно
+                </button>
+                <p class="form-terms">
+                  Натискаючи на кнопку я погоджуюсь
+                  <a class="form-terms-link" href="#">
+                    з політикою конфіденційності
+                  </a>
+                </p>
+              </form>
             </div>
           </div>
         </div>
@@ -248,5 +318,60 @@
         </div>
       </div>
     </footer>
+
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="modal-btn-close" type="button">Close</button>
+        <h2 class="modal-title">Замовити дзвінок</h2>
+        <p class="modal-description">
+          Запишіться <span class="accent">безкоштовно</span> та отримайте
+          подарунок
+        </p>
+        <form name="modal-form" autocomplete="off">
+          <div class="form-field">
+            <label class="form-label visually-hidden" for="user-name"></label>
+            <input
+              class="form-input"
+              type="text"
+              name="user-name"
+              id="user-name"
+              placeholder="Ваше ім'я та прізвище"
+              pattern="^[a-zA-Z]+ [a-zA-Z]+$"
+              required
+            />
+
+            <label class="form-label visually-hidden" for="user-tel"></label>
+            <input
+              class="form-input"
+              type="tel"
+              name="user-tel"
+              id="user-tel"
+              placeholder="Ваш номер телефону"
+              pattern="^\+380[0-9]{9}$"
+              required
+            />
+
+            <label class="form-label visually-hidden" for="user-email"></label>
+            <input
+              class="form-input"
+              type="email"
+              name="user-email"
+              id="user-email"
+              placeholder="Ваша електронна пошта"
+              required
+            />
+          </div>
+          <button class="form-button hero-button" type="submit">
+            Записатись безкоштовно
+          </button>
+          <p class="form-terms">
+            Натискаючи на кнопку я погоджуюсь
+            <a class="form-terms-link" href="#">з політикою конфіденційності</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

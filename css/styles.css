@@ -54,6 +54,7 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: var(--color-primary-dark);
+    overflow-x: hidden;
 }
 
 a {
@@ -92,6 +93,7 @@ h2 {
 
 h3 {
     color: var(--color-primary-white);
+    font-size: 22px;
     line-height: 1.18;
     text-align: center;
     margin: 0;
@@ -109,7 +111,7 @@ h3 {
     text-transform: capitalize;
 }
 
-h2 .accent, h3 .accent {
+h2 .accent, h3 .accent, .modal .accent {
     color: var(--color-primary-light);
 }
 
@@ -127,17 +129,33 @@ footer p {
     color: var(--color-secondary-light);
 }
 
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 /* Header section */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 .header-container {
     display: flex;
     align-items: center;
     gap: 40px;
-
+    
     width: 100%;
     max-width: 1288px;
     padding: 32px 24px;
     margin: 0 auto;
-
+    
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.25);
 }
@@ -154,6 +172,11 @@ footer p {
     gap: 56px;
     flex-grow: 1;
     justify-content: center;
+    padding: 0;
+}
+
+.header-link {
+    transition: 0.2s;
 }
 
 .header-link:hover {
@@ -169,19 +192,23 @@ footer p {
     gap: 32px;
 }
 
-/* Hero section */
-.hero-section {
-    background-image: linear-gradient(94deg,#fff 20%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.19) 55%, rgba(255, 255, 255, 0) 68%), url(../images/hero-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: right top;
+.header-social a {
+    width: 32px;
+    height: 32px;
 }
+
+/* Hero section */
 
 .hero-container {
     width: 100%;
     max-width: 1288px;
     margin: 0 auto;
-    padding: 0 24px 126px 75px;
+    padding: 145px 24px 0 24px; 
+
+    background-image: linear-gradient(94deg, #fff 20%, rgba(255, 255, 255, 0.85) 30%, rgba(255, 255, 255, 0.19) 55%, rgba(255, 255, 255, 0) 68%), url(../images/hero-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-preface {
@@ -199,11 +226,14 @@ footer p {
     border-radius: 32px;
     background-color: var(--color-primary-light);
     margin-bottom: 14px;
+
+    transition: 0.2s;
 }
 
 .hero-button:hover {
     color: var(--color-primary-dark);
     background-color: transparent;
+    cursor: pointer;
 }
 
 .hero-description {
@@ -213,6 +243,7 @@ footer p {
     max-width: 230px;
     text-align: center;
     margin: 0;
+    padding-bottom: 126px;
 }
 
 /* About section */
@@ -234,37 +265,142 @@ footer p {
 
 .about-content {
     margin: 0;
-    padding-bottom: 40px;
     width: 100%;
     max-width: 670px;
 }
 
-.about-content:last-child {
+.about-content p:last-child {
     margin: 0;
     padding: 0;
 }
 
-p .accent {
+.about-content p .accent {
     color: var(--color-primary-dark);
     font-weight: 700;
 }
 
+.about-pictures {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .about-image {
-    max-width: 327px;
+    width: 327px;
+    height: 327px;
     border-radius: 50%;
     box-shadow: 0 4px 4px 0 rgba(168, 198, 245, 0.2);
 }
 
+.about-image:last-child {
+    max-width: 327px;
+    max-height: 328px;
+    margin: 0 0 0 172px;
+    margin-top: 40px;
+}
+
+.about-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.about-star-1 {
+    width: 40px;
+    height: 40px;
+    margin-left: 471px;
+    margin-top: 32px;
+
+    animation-name: star;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.about-star-2 {
+    width: 16px;
+    height: 16px;
+    margin-left: 472px;
+    margin-top: 269px;
+
+    animation-name: star;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.about-star-3 {
+    width: 64px;
+    height: 64px;
+    margin-left: 117px;
+    margin-top: 347px;
+
+    animation-name: star;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes star {
+    0% {
+        transform: rotate(0) scale(100%);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(150%);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(100%);
+    }
+}
+
 /* Advantages section */
-/* .advantages-section {
-    background-image: linear-gradient(178deg, #2b7fff 33.47%, rgba(43, 127, 255, 0) 63.46%, rgba(43, 127, 255, 0) 89.47%);
+/* .advantages-bg {
+    height: 1507px;
+    width: 2023px;
+    max-height: 2023px;
+    max-width: 1507px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -150px 0 0 -482px;
+
+    content: '';
+    background-image: url(../images/advantages-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -1;
 } */
 
+.advantages-container::before {
+    /* position: absolute;
+    content: url(../images/advantages-bg.png);
+    z-index: -1;
+    background-image: url(../images/advantages-bg.png); */
+
+    position: absolute;
+    content: '';
+    background-image: url(../images/advantages-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: -150px 0 0 -482px;
+    width: 2023px;
+    height: 1507px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .advantages-container {
+    position: relative;
     width: 100%;
     max-width: 1060px;
     margin: 0 auto;
     padding: 48px 0;
+    overflow: visible;
 }
 
 .advantages-title {
@@ -285,6 +421,12 @@ p .accent {
     border-radius: 32px;
     padding: 24px 32px;
     margin: 0;
+
+    transition: transform 0.2s;
+}
+
+.advantages-item:hover {
+    transform: scale(1.05);
 }
 
 .advantages-icon {
@@ -305,6 +447,7 @@ p .accent {
     max-width: 1216px;
     margin: 0 auto;
     padding: 48px 0;
+    z-index: 2;
 }
 
 .procedures-title {
@@ -327,7 +470,6 @@ p .accent {
 }
 
 .procedures-item {
-    background-image: linear-gradient(180deg, rgba(1, 28, 68, 0) 47.4%, rgba(1, 28, 68, 0.73) 82.66%, #011c44 99.06%);
     height: 456px;
     border-radius: 4px 120px;
     flex-grow: 1;
@@ -337,6 +479,21 @@ p .accent {
     justify-content: center;
 }
 
+.procedures-item:nth-child(1) {
+    background-image: linear-gradient(180deg, rgba(1, 28, 68, 0) 47.4%, rgba(1, 28, 68, 0.73) 82.66%, #011c44 99.06%), url(../images/procedures-item-1.jpg);
+    background-size: cover;
+}
+
+.procedures-item:nth-child(2) {
+    background-image: linear-gradient(180deg, rgba(1, 28, 68, 0) 47.4%, rgba(1, 28, 68, 0.73) 82.66%, #011c44 99.06%), url(../images/procedures-item-2.jpg);
+    background-size: cover;
+}
+
+.procedures-item:nth-child(3) {
+    background-image: linear-gradient(180deg, rgba(1, 28, 68, 0) 47.4%, rgba(1, 28, 68, 0.73) 82.66%, #011c44 99.06%), url(../images/procedures-item-3.jpg);
+    background-size: cover;
+}
+
 .procedures-button {
     display: flex;
     align-items: center;
@@ -344,12 +501,18 @@ p .accent {
     flex-shrink: 0;
     width: 44px;
     height: 44px;
-    padding: 22px 13px;
+    padding: 13px;
     fill: var(--color-primary-dark);
     border: 1px solid var(--color-primary-dark);
     background-color: var(--color-primary-white);
     border-radius: 50%;
     cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.procedures-button.next {
+    transform: rotate(180deg);
 }
 
 .procedures-button:hover {
@@ -385,18 +548,54 @@ p .accent {
 }
 
 .contacts-form {
+    background-image: url(../images/decor-modal-bg.png);
+    background-size: cover;
     background-color: var(--color-primary-dark);
     border-radius: 32px;
     flex-grow: 1;
+    text-align: center;
 }
 
-.form-title {
+.contacts-form-title {
     font-weight: 700;
     text-align: center;
-    padding: 48px 40px 32px;
-    margin: 0 auto;
-    max-width: 39
-    5px;
+    margin: 48px auto 32px;
+    padding: 0;
+    max-width: 274px;
+}
+
+.contacts-form-input {
+    width: 100%;
+    padding: 18px 32px;
+
+    border: 2px solid var(--color-secondary-light);
+    border-radius: 32px;
+    background-color: transparent;
+
+    color: var(--color-primary-white);
+    font-size: 13px;
+    font-weight: 400;
+
+    margin-bottom: 16px;
+}
+
+.contacts-form-input::placeholder {
+    color: var(--color-primary-white);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.contacts-form-input:focus {
+    background-color: var(--color-secondary-light);
+    outline: none;
+}
+
+.contacts-form-field {
+    margin: 0;
+}
+
+.contacts-form-button {
+    margin: 0;
 }
 
 /* Footer section */
@@ -459,4 +658,123 @@ p .accent {
     flex-grow: 1;
     flex-basis: 50%;
     align-items: start;
+}
+
+/* Modal section */
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(1, 31, 74, 0.4);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal {
+    position: relative;
+
+    padding: 40px 140px;
+    width: 100%;
+    max-width: 723px;
+    height: 100%;
+    max-height: 700px;
+
+    background-image: url(../images/decor-modal-bg.png);
+    background-color: var(--color-primary-dark);
+    border-radius: 48px;
+
+    overflow-y: auto;
+
+    color: var(--color-primary-white);
+    font-weight: 700;
+    text-align: center;
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.modal-title {
+    color: var(--color-primary-white);
+    padding-bottom: 40px;
+}
+
+.modal-description {
+    width: 100%;
+    max-width: 274px;
+    margin: 0 auto 32px;
+    line-height: 1.18;
+}
+
+.form-field {
+    width: 100%;
+    max-width: 310px;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 18px 32px;
+
+    border: 2px solid var(--color-secondary-light);
+    border-radius: 32px;
+    background-color: transparent;
+
+    color: var(--color-primary-white);
+    font-size: 13px;
+    font-weight: 400;
+
+    margin-bottom: 24px;
+}
+
+.form-input::placeholder {
+    color: var(--color-primary-white);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.form-input:focus {
+    background-color: var(--color-secondary-light);
+    outline: none;
+}
+
+.form-button {
+    width: 100%;
+    max-width: 310px;
+    margin: 0;
+}
+
+.form-terms, .form-terms-link {
+    color: var(--color-secondary-light);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.form-terms {
+    margin: 8px auto 0;
+    max-width: 213px;
+}
+
+.form-terms-link {
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
